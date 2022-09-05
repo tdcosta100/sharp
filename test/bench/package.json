@@ -8,6 +8,7 @@
     "test": "node perf && node random && node parallel"
   },
   "devDependencies": {
+    "@imazen/imageflow": "0.0.1-rc17",
     "@squoosh/cli": "0.7.2",
     "@squoosh/lib": "0.4.0",
     "async": "3.2.4",
