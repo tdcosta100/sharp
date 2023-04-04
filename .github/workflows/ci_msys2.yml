@@ -22,7 +22,7 @@ jobs:
       - uses: msys2/setup-msys2@v2
         with:
           msystem: UCRT64
-          shell: msys2 {0}
+      - shell: msys2 {0}
         run: pacman --noconfirm -S mingw-w64-ucrt-x86_64-glib2
 
       - name: List C:\msys64\ucrt64\bin contents
