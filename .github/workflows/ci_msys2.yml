@@ -1,0 +1,24 @@
+name: Teste MSYS2
+on:
+  - push
+  - pull_request
+permissions: {}
+jobs:
+  CI:
+    permissions:
+      contents: write # for npx prebuild to make release
+    name: ${{ matrix.container || matrix.os }} - Node.js ${{ matrix.nodejs_version }} ${{ matrix.nodejs_arch }} ${{ matrix.prebuild && '- prebuild' }}
+    runs-on: ${{ matrix.os }}
+    container: ${{ matrix.container }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-2019
+            nodejs_version: 18
+            nodejs_arch: x64
+    steps:
+      - name: Dependencies (Linux glibc)
+        if: contains(matrix.container, 'centos')
+        run: |
+          ls -la C:\
