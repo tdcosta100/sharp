@@ -18,7 +18,6 @@ jobs:
             nodejs_version: 18
             nodejs_arch: x64
     steps:
-      - name: Dependencies (Linux glibc)
-        if: contains(matrix.container, 'centos')
+      - name: List C:\ contents
         run: |
           ls -la C:\
