@@ -18,6 +18,6 @@ jobs:
             nodejs_version: 18
             nodejs_arch: x64
     steps:
-      - name: List C:\msys64 contents
+      - name: List C:\msys64\ucrt64\bin contents
         run: |
-          Get-ChildItem C:\msys64
+          Get-ChildItem C:\msys64\ucrt64\bin
