@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Install mingw-w64-ucrt-x86_64-glib2
         run: |
-          C:\msys64\msys2_shell.cmd -c 'pacman --noconfirm -S mingw-w64-ucrt-x86_64-glib2'
+          C:\msys64\msys2_shell.cmd -ucrt64 -c 'pacman --noconfirm -S mingw-w64-ucrt-x86_64-glib2'
 
       - name: List C:\msys64\ucrt64\bin contents
         run: |
