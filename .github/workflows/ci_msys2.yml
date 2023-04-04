@@ -24,7 +24,7 @@ jobs:
         shell: C:\msys64\usr\bin\bash.exe {0}
         run: |
           export PATH=$PATH:/c/msys64:/c/msys64/usr/bin && echo $PATH
-          pacman --noconfirm --nodeps -S mingw-w64-ucrt-x86_64-glib2
+          pacman --noconfirm -S --nodeps mingw-w64-ucrt-x86_64-glib2
 
       - name: List C:\msys64\ucrt64\bin contents
         run: |
