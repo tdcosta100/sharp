@@ -20,4 +20,4 @@ jobs:
     steps:
       - name: List C:\ contents
         run: |
-          ls -la C:\
+          Get-ChildItem C:\
