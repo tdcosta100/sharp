@@ -21,7 +21,7 @@ jobs:
       - name: Install mingw-w64-ucrt-x86_64-glib2
         shell: C:\msys64\usr\bin\bash.exe {0}
         run: |
-          export PATH=$PATH:C:\msys64:C:\msys64\usr\bin
+          export PATH=$PATH:C:\msys64:C:\msys64\usr\bin && echo $PATH
           pacman --noconfirm -S mingw-w64-ucrt-x86_64-glib2
 
       - name: List C:\msys64\ucrt64\bin contents
