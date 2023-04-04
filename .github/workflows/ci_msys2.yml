@@ -20,11 +20,11 @@ jobs:
     steps:
       - name: Install mingw-w64-ucrt-x86_64-glib2
       - shell: C:\msys64\usr\bin\bash.exe {0}
+        run: |
+          pacman --noconfirm -S mingw-w64-ucrt-x86_64-glib2
         env:
           MSYSTEM: UCRT64
           PATH: ${{ env.PATH }};C:\msys64;C:\msys64\usr\bin
-        run: |
-          pacman --noconfirm -S mingw-w64-ucrt-x86_64-glib2
 
       - name: List C:\msys64\ucrt64\bin contents
         run: |
