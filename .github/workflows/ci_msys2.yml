@@ -19,9 +19,11 @@ jobs:
             nodejs_arch: x64
     steps:
       - name: Install mingw-w64-ucrt-x86_64-glib2
+        env:
+          MSYSTEM: UCRT64
         shell: C:\msys64\usr\bin\bash.exe {0}
         run: |
-          export PATH=$PATH:C:\msys64:C:\msys64\usr\bin && echo $PATH
+          export PATH=$PATH:/c/msys64:/c/msys64/usr/bin && echo $PATH
           pacman --noconfirm -S mingw-w64-ucrt-x86_64-glib2
 
       - name: List C:\msys64\ucrt64\bin contents
