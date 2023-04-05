@@ -96,6 +96,19 @@ jobs:
         run: chown root.root .
       - name: Install
         run: npm install --build-from-source --unsafe-perm
+      - name: Install MSYS2 glib2 DLLs
+        if: contains(matrix.os, 'windows')
+        env:
+          MSYSTEM: UCRT64
+        shell: C:\msys64\usr\bin\bash.exe {0}
+        run: |
+          export PATH=$PATH:/c/msys64:/c/msys64/usr/bin
+          pacman --noconfirm -S -dd mingw-w64-ucrt-x86_64-glib2
+          cp -f /ucrt64/bin/libglib-2.0-0.dll ./build/Release/
+          cp -f /ucrt64/bin/libgobject-2.0-0.dll ./build/Release/
+          cp -f /ucrt64/bin/libiconv-2.dll ./build/Release/
+          cp -f /ucrt64/bin/libintl-8.dll ./build/Release/
+          cp -f /ucrt64/bin/libpcre2-8-0.dll ./build/Release/
       - name: Test
         run: npm test
       - name: Prebuild
