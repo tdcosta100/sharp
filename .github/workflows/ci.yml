@@ -104,6 +104,9 @@ jobs:
         run: |
           export PATH=$PATH:/c/msys64:/c/msys64/usr/bin
           pacman --noconfirm -S -dd mingw-w64-ucrt-x86_64-glib2
+          ls -la /
+          ls -la /ucrt64
+          ls -la /ucrt64/bin
           cp -f /ucrt64/bin/libglib-2.0-0.dll ./build/Release/
           cp -f /ucrt64/bin/libgobject-2.0-0.dll ./build/Release/
           cp -f /ucrt64/bin/libiconv-2.dll ./build/Release/
