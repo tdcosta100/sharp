@@ -107,7 +107,6 @@ jobs:
           export MSYSTEM_PREFIX=/ucrt64
           pacman --noconfirm -S -dd mingw-w64-ucrt-x86_64-glib2
           env
-          find / -name libglib-2.0-0.dll
           ls -la /
           ls -la /ucrt64
           ls -la /ucrt64/bin
