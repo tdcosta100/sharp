@@ -105,7 +105,7 @@ jobs:
           export PATH=/ucrt64/bin:/usr/local/bin:/usr/bin:/bin
           export MINGW_PREFIX=/ucrt64
           export MSYSTEM_PREFIX=/ucrt64
-          pacman --noconfirm -S -dd mingw-w64-ucrt-x86_64-glib2
+          pacman --noconfirm -S -dd mingw-w64-ucrt-x86_64-glib2 mingw-w64-ucrt-x86_64-libiconv mingw-w64-ucrt-x86_64-gettext mingw-w64-ucrt-x86_64-pcre2
           env
           ls -la /
           ls -la /ucrt64
