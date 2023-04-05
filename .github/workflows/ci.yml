@@ -102,7 +102,9 @@ jobs:
           MSYSTEM: UCRT64
         shell: C:\msys64\usr\bin\bash.exe {0}
         run: |
-          export PATH=$PATH:/c/msys64:/c/msys64/usr/bin
+          export PATH=/ucrt64/bin:/usr/local/bin:/usr/bin:/bin
+          export MINGW_PREFIX=/ucrt64
+          export MSYSTEM_PREFIX=/ucrt64
           pacman --noconfirm -S -dd mingw-w64-ucrt-x86_64-glib2
           env
           find / -name libglib-2.0-0.dll
