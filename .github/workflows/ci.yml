@@ -97,7 +97,7 @@ jobs:
       - name: Install
         run: npm install --build-from-source --unsafe-perm
       - name: Install MSYS2 glib2 DLLs in Windows-x64
-        if: contains(matrix.os, 'windows') && ${{ matrix.nodejs_arch }} == 'x64'
+        if: contains(matrix.os, 'windows') && startsWith(matrix.nodejs_arch, 'x64')
         env:
           MSYSTEM: UCRT64
         shell: C:\msys64\usr\bin\bash.exe {0}
