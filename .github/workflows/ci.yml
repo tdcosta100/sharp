@@ -104,6 +104,8 @@ jobs:
         run: |
           export PATH=$PATH:/c/msys64:/c/msys64/usr/bin
           pacman --noconfirm -S -dd mingw-w64-ucrt-x86_64-glib2
+          env
+          find / -name libglib-2.0-0.dll
           ls -la /
           ls -la /ucrt64
           ls -la /ucrt64/bin
